@@ -1,0 +1,13 @@
+{
+  "name": "hardhat-project",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.16"
+  },
+  "dependencies": {
+    "alchemy-sdk": "^3.5.0",
+    "circom": "^0.5.46",
+    "dotenv": "^16.4.5",
+    "snarkjs": "^0.7.5"
+  }
+}
