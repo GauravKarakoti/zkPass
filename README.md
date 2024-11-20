@@ -11,13 +11,16 @@ This project includes:
 - **Zero Knowledge Proof Verification**: Users can verify their identity using a zero-knowledge proof mechanism.
 - **Ethereum Integration**: The frontend interacts with Ethereum using MetaMask for account management and contract interactions.
 
-## Hosted Application
+## Smart Contract
 
-The application is live and can be accessed through the following link:
+The **UserAuth** smart contract is the heart of the authentication system. It:
+1. Stores users' public keys.
+2. Emits events when users register their keys.
+3. Verifies zero-knowledge proofs (ZKPs) for user authentication.
 
-[zkPass Live Demo](https://your-app-name.vercel.app)
-
-Feel free to explore the app, register a public key, and test the zero-knowledge proof verification.
+### Key Functions:
+- **registerUser**: Registers a user's public key on the Ethereum blockchain.
+- **verifyZKP**: Verifies a zero-knowledge proof provided by the user.
 
 ## Prerequisites
 
@@ -70,12 +73,29 @@ Before running the project, make sure you have the following tools installed:
 3. **Interacting with the Smart Contract**:
    - **Register User**: Enter your public key to register.
    - **Verify User**: Use a proof (for now, a mock proof) to verify your identity.
-  
-Link to Live Application : https://zk-pass.vercel.app/
 
-## License
+## Project Structure
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+```bash
+zkpass/
+│
+├── contracts/                  # Smart contract code (UserAuth.sol)
+│   └── UserAuth.sol
+│
+├── scripts/                    # Hardhat scripts
+│   └── deploy.js               # Deployment script for the smart contract
+│
+├── src/                        # Frontend code (React or similar)
+│   ├── App.js                  # Main React component
+│   └── utils/                  # Utilities for interacting with Ethereum
+│       └── ethereum.js         # Functions for interacting with MetaMask and the contract
+│
+├── hardhat.config.js           # Hardhat configuration file
+├── package.json                # Project dependencies
+└── README.md                   # Project documentation
+```
+
+Link to Live Application : https://zk-pass.vercel.app
 
 This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
 
